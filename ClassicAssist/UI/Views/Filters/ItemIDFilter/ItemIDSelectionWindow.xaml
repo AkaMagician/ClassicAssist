@@ -28,6 +28,7 @@
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
@@ -39,7 +40,16 @@
             <TextBlock Text="{x:Static resources:Strings.Filter_}" Grid.Column="0" VerticalAlignment="Center" />
             <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Margin="5,0,0,0" />
         </Grid>
-        <ListBox x:Name="listBox" Grid.Row="1" ItemsSource="{Binding FilterImages}" Margin="0,10,0,0"
+        <Grid Grid.Row="1" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Item size" Grid.Column="0" VerticalAlignment="Center" />
+            <Slider Grid.Column="1" Minimum="16" Maximum="100"
+                    Value="{Binding ItemSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        </Grid>
+        <ListBox x:Name="listBox" Grid.Row="2" ItemsSource="{Binding FilterImages}" Margin="0,10,0,0"
                  SelectedItem="{Binding SelectedItem}">
             <ListBox.Resources>
                 <valueConverters:IntToHexStringValueConverter x:Key="IntToHexStringValueConverter" />
@@ -47,7 +57,10 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="{Binding ImageSource}" />
+                        <Image Source="{Binding ImageSource}"
+                               Width="{Binding DataContext.ItemSize, RelativeSource={RelativeSource AncestorType=Window}}"
+                               Height="{Binding DataContext.ItemSize, RelativeSource={RelativeSource AncestorType=Window}}"
+                               Stretch="Uniform" />
                         <StackPanel VerticalAlignment="Center" Margin="10,0,0,0">
                             <TextBlock Text="{Binding ID, Converter={StaticResource IntToHexStringValueConverter}}" />
                             <TextBlock Text="{Binding Name}" />
@@ -56,7 +69,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Image Grid.Row="1" Source="{StaticResource LoadIcon}" Height="40" RenderTransformOrigin=".5, .5">
+        <Image Grid.Row="2" Source="{StaticResource LoadIcon}" Height="40" RenderTransformOrigin=".5, .5">
             <Image.Style>
                 <Style TargetType="{x:Type Image}">
                     <Setter Property="Visibility" Value="Visible" />
@@ -82,7 +95,7 @@
                 </EventTrigger>
             </Image.Triggers>
         </Image>
-        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right" Margin="0,10,0,0">
+        <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Right" Margin="0,10,0,0">
             <StackPanel.Resources>
                 <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
                     <Setter Property="Padding" Value="25,3" />

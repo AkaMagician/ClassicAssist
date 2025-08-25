@@ -23,6 +23,7 @@ namespace ClassicAssist.UI.Views.Filters.ItemIDFilter
         private ICommand _okCommand;
         private string _searchText;
         private ImageData _selectedItem;
+        private double _itemSize = 40;
 
         public ItemIDSelectionWindow()
         {
@@ -58,6 +59,12 @@ namespace ClassicAssist.UI.Views.Filters.ItemIDFilter
         {
             get => _selectedItem;
             set => SetField( ref _selectedItem, value );
+        }
+
+        public double ItemSize
+        {
+            get => _itemSize;
+            set => SetField( ref _itemSize, value );
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
