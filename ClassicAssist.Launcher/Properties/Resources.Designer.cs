@@ -185,7 +185,18 @@ namespace ClassicAssist.Launcher.Properties {
                 return ResourceManager.GetString("Error", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to start ClassicUO. Windows reported: {0}
+        ///
+        ///If the files were downloaded from the internet, make sure they are unblocked (for example, right-click the file, open Properties, and select Unblock, or run 'Unblock-File' on the installation folder).
+        /// </summary>
+        public static string ClientLaunchFailedMessage {
+            get {
+                return ResourceManager.GetString("ClientLaunchFailedMessage", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Moving item {0} / {1}.
         /// </summary>
