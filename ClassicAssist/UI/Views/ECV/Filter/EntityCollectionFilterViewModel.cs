@@ -69,7 +69,7 @@ namespace ClassicAssist.UI.Views.ECV.Filter
 #if DEBUG
             if ( DesignerProperties.GetIsInDesignMode( new DependencyObject() ) )
             {
-                Environment.CurrentDirectory = @"C:\Users\johns\Documents\UO\ClassicAssist\Output\net48";
+                Environment.CurrentDirectory = @"C:\Users\johns\Documents\UO\ClassicAssist\Output\net10.0-windows";
             }
 #endif
 

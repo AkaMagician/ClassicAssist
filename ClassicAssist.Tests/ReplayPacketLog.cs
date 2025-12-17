@@ -45,7 +45,7 @@
 //            {
 //                Engine.ClientVersion = new Version( 5, 0, 9, 1 );
 
-//                string fileName = @"C:\Users\johns\source\repos\ClassicAssist\Output\net48\export.packets.json";
+//                string fileName = @"C:\Users\johns\source\repos\ClassicAssist\Output\net10.0-windows\export.packets.json";
 
 //                if ( !File.Exists( fileName ) )
 //                {
