@@ -2,7 +2,7 @@
   "profiles": {
     "ExportCommands": {
       "commandName": "Project",
-      "commandLineArgs": "C:\\Users\\johns\\Documents\\UO\\ClassicAssist\\Output\\net48\\ClassicAssist.dll"
+      "commandLineArgs": "C:\\Users\\johns\\Documents\\UO\\ClassicAssist\\Output\\net9.0-windows\\ClassicAssist.dll"
     }
   }
 }

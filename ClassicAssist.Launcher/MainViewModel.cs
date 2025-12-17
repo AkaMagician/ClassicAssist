@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Configuration;
 using System.Diagnostics;
 using System.IO;
@@ -514,11 +515,26 @@ namespace ClassicAssist.Launcher
                 UseShellExecute = true
             };
 
-            Process p = Process.Start( psi );
-
-            if ( p != null && !p.HasExited )
+            try
             {
-                Application.Current.Shutdown( 0 );
+                Process p = Process.Start( psi );
+
+                if ( p != null && !p.HasExited )
+                {
+                    Application.Current.Shutdown( 0 );
+                }
+            }
+            catch ( Win32Exception ex )
+            {
+                MessageBox.Show(
+                    string.Format( Resources.ClientLaunchFailedMessage, ex.Message ),
+                    Resources.Error,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error );
+            }
+            catch ( Exception ex )
+            {
+                MessageBox.Show( ex.Message, Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error );
             }
         }
 

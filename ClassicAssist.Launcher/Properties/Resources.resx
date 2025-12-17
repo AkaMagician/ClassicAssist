@@ -150,6 +150,11 @@
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="ClientLaunchFailedMessage" xml:space="preserve">
+    <value>Unable to start ClassicUO. Windows reported: {0}
+
+If the files were downloaded from the internet, make sure they are unblocked (for example, right-click the file, open Properties, and select Unblock, or run 'Unblock-File' on the installation folder).</value>
+  </data>
   <data name="Shards" xml:space="preserve">
     <value>Shards</value>
   </data>
