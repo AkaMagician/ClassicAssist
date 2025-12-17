@@ -2,7 +2,7 @@
   <PropertyGroup>
     <ProjectGuid>{52BF9AF6-77E1-487D-9996-44258B0F519D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net9.0-windows</TargetFramework>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <AssemblyTitle>ExportCommands</AssemblyTitle>
     <Product>ExportCommands</Product>

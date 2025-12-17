@@ -82,7 +82,7 @@ namespace ClassicAssist.UI.ViewModels
 #if DEBUG
             if ( DesignerProperties.GetIsInDesignMode( new DependencyObject() ) )
             {
-                Environment.CurrentDirectory = @"C:\Users\johns\Documents\UO\ClassicAssist\Output\net48";
+                Environment.CurrentDirectory = @"C:\Users\johns\Documents\UO\ClassicAssist\Output\net9.0-windows";
                 const string uoFolder = @"C:\Users\johns\Documents\UO\Ultima Online Classic";
 
                 Art.Initialize( uoFolder );
